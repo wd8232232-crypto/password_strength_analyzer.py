@@ -1,41 +1,26 @@
-import string
+# 🔐 Password Strength Analyzer
 
-password = input("Enter your password: ")
+A beginner-friendly Python project that checks the strength of a user-entered password.
 
-score = 0
+## Features
 
-# Check length
-if len(password) >= 8:
-    score += 1
+- Checks password length
+- Checks uppercase letters
+- Checks lowercase letters
+- Checks numbers
+- Checks special characters
+- Gives Weak, Medium, or Strong results
+- Provides suggestions to improve password strength
 
-# Check uppercase
-if any(char.isupper() for char in password):
-    score += 1
+## Technologies Used
 
-# Check lowercase
-if any(char.islower() for char in password):
-    score += 1
+- Python
+- Conditional Statements
+- Strings
+- `any()`
+- `string.punctuation`
 
-# Check numbers
-if any(char.isdigit() for char in password):
-    score += 1
+## How to Run
 
-# Check special characters
-if any(char in string.punctuation for char in password):
-    score += 1
-
-
-# Display result
-print("\nPassword Strength:")
-
-if score <= 2:
-    print("Weak Password ❌")
-    print("Suggestion: Use at least 8 characters with uppercase, lowercase, numbers and special characters.")
-
-elif score == 3 or score == 4:
-    print("Medium Password ⚠️")
-    print("Suggestion: Add more complexity to make your password stronger.")
-
-else:
-    print("Strong Password ✅")
-    print("Your password has good complexity.")
+```bash
+python password_strength_analyzer.py
